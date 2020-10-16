@@ -35,7 +35,7 @@ class KeyValueSessionStore(SessionStore):
      
     #override methods from SessionStore class
     def set_key(self, key, value):
-        return requests.post(self.url, json={key:value})
+        return requests.post(self.url, {key:value.values()})
 
     def get_key(self, key):
         urlKey = requests.get(self.url + '/' + key)
