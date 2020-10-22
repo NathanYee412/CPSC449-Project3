@@ -1,5 +1,7 @@
 Nathan Yee
 nyee@csu.fullerton.edu
+Lola Holliday
+lolaholliday@csu.fullerton.edu
 CPSC449-01
 Project 3: Server-side Sessions 
 
@@ -14,7 +16,7 @@ run the command $ python3 ./dump.py localhost:5100
 
 # dump.py ########################################################################################################################
 First we need to import requests and sys. 
-Then I created a url variable that will store the first argument from the command line which is supposed to be localhost:5100
+Then I created a url variable that will store the first argument from the command line, after the filename, which is supposed to be localhost:5100
 This code stores all of the key value pairs in a variable as a dictionary.
 We now create a sessions object using requests.post(url, json=var)
 The sessions object just created has a method to show the status code. An exception is created to test if the status code is not 200.
@@ -29,6 +31,4 @@ This file just required us to override the set_key, get_key, and delete_key meth
 The get_key function was written using a get method. .get(self.url + '/' + key) was used to get the key object.
 the delete_key function is very simialr to the get_key function where the only change is .delete is used instead of .get.
 
-# overview #######################################################################################################################
-I was not able to get the counter working when foreman start was ran. I beleive there is a problem with the way I have implemented my set_key funciton in sessions.py. When I refresh the count app, A cookie is created and when dump.py is ran, I am able to see the cookie and the count (stored as an int) but the count will not increment. I have tried many solutions and ways of storing the value. I can see that it is passed in as a dict so the logical way to post the key value would be to use {key:value['count']} 
 
